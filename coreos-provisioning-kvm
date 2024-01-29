@@ -3,6 +3,7 @@
 # this will enable mutliple vms hosted on different compute to communicate with each other
 sudo virt-install   --name=coreos3-system --import --disk path=/var/lib/libvirt/images/coreos2.qcow,size=20 --ram=4096 --vcpus=1 --os-variant=fedora18 --network type=direct,source=enp0s9,model=virtio --graphics none --noautoconsole
 
-  #
-  sudo virt-install   --name=my-coreos-vm-1   --import   --disk path=/var/lib/libvirt/images/base/coreos2.qcow2,size=20   --ram=2048   --vcpus=1   --os-variant=fedora18   --network bridge=virbr0,model=virtio   --graphics none   --noautoconsole
+# same as above except the networking part.
+# it uses the kvm internal default bridge network
+sudo virt-install   --name=my-coreos-vm-1   --import   --disk path=/var/lib/libvirt/images/base/coreos2.qcow2,size=20   --ram=2048   --vcpus=1   --os-variant=fedora18   --network bridge=virbr0,model=virtio   --graphics none   --noautoconsole
   
