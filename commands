@@ -1,0 +1,6 @@
+#command to convert virtualbox image vdi to qcow2
+qemu-img convert -f vdi -O qcow2   coreos2.vdi   coreos2.qcow2
+
+#virsh list --all
+#virsh net-list
+#brctl show
